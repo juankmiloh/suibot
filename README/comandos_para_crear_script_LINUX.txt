@@ -9,7 +9,7 @@
 
 3. Escribir en el script lo siguiente:
 	[Unit]
-	Description=Iniciar servidor de PYTHON
+	Description=Iniciar SUIBOT
 	After=network.target
 	StartLimitIntervalSec=0
 
@@ -57,3 +57,6 @@
 
 *. COMANDO PARA MATAR UN PROCESO QUE CORRE POR UN PUERTO DETERMINADO - LINUX
 	sudo fuser -k 9527/tcp
+
+*. COMANDO PARA MOSTRAR LAS ULTIMAS 100 LINEAS DE LA CONSOLA DE LA EJECUCION DE UN SERVICIO LINUX
+journalctl --unit=suibot.service -n 100 --no-pager

@@ -49,7 +49,7 @@ function start(client) {
         ' tu solicitud, para continuar por favor compártenos el identificador de tu empresa')
       .then((result) => {
         // console.log('Result: ', result); //return object success
-        console.log('Result: ', result.status); //return object success
+        console.log(`Result message :>> ${message.chat.contact.displayName} :>> ${result.status}`); //return object success
       })
       .catch((erro) => {
         console.error('Error when sending: ', erro); //return object error
