@@ -2,6 +2,7 @@
 // import { create, Whatsapp } from 'venom-bot';
 const fs = require('fs');
 const venom = require('venom-bot');
+const dialogflow=require("./dialogflow");
 
 venom
   .create(
@@ -40,19 +41,20 @@ venom
   });
 
 function start(client) {
-  client.onMessage((message) => {
+  client.onMessage(async (message) => {
     // console.log('message :>> ', message)
-    client
-      .sendText(message.from, `Hola ${message.chat.contact.displayName}` + ' bienvenido al WhatsApp de la mesa de ayuda de la Superintendencia' +
-        ' de Servicios Públicos Domiciliarios. Tu información es muy importante para nosotros, por eso te invitamos' +
-        ' a que validemos juntos los datos de acceso al Sistema Único de Información, así podremos continuar gestionando' +
-        ' tu solicitud, para continuar por favor compártenos el identificador de tu empresa')
-      .then((result) => {
-        // console.log('Result: ', result); //return object success
-        console.log(`Result message :>> ${message.chat.contact.displayName} :>> ${result.status}`); //return object success
-      })
-      .catch((erro) => {
-        console.error('Error when sending: ', erro); //return object error
-      });
+    let payload=await dialogflow.sendToDialogFlow(message.body, "123123");
+    let responses=payload.fulfillmentMessages;
+    for (const response of responses) {
+      client
+        .sendText(message.from, response.text.text[0])
+        .then((result) => {
+          // console.log('Result: ', result); //return object success
+          console.log(`Result message :>> ${message.chat.contact.displayName} :>> ${result.status}`); //return object success
+        })
+        .catch((erro) => {
+          console.error('Error when sending: ', erro); //return object error
+        });
+    }
   });
 }
