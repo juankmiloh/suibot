@@ -59,7 +59,7 @@ function start(client) {
 function sendMessageToWhatsapp(client, message, response) {
   return new Promise((resolve, reject) => {
     client
-    .sendText(message.from, eval(response.text.text[0]))
+    .sendText(message.from, response.text.text[0].includes('${') ? eval(response.text.text[0]) : response.text.text[0])
     .then((result) => {
       // console.log('Result: ', result); //return object success
       console.log(`Result message :>> ${message.chat.contact.displayName} :>> ${result.status}`); //return object success
