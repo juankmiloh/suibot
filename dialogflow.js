@@ -51,7 +51,7 @@ async function sendToDialogFlow(msg, session, params) {
       });
     }
     result.fulfillmentMessages = defaultResponses;
-    console.log('Result :>> ', JSON.stringify(result, null, ' '));
+    // console.log('Result :>> ', JSON.stringify(result, null, ' '));
     return result;
     // console.log("se enviara el resultado: ", result);
   } catch (e) {
