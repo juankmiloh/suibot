@@ -61,7 +61,19 @@ async function sendToDialogFlow(msg, session, params) {
   } catch (e) {
     console.log("error");
     console.log(e);
-    return await sendToDialogFlow(msg, session, params)
+    return {
+      fulfillmentMessages: [
+        {
+          platform: 'PLATFORM_UNSPECIFIED',
+          text: {
+            text: [
+              "'Ups! ¿Podrías repetirlo, por favor?'"
+            ]
+          },
+          message: 'text'
+        }
+      ]
+    }
   }
 }
 
