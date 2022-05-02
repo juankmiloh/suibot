@@ -23,6 +23,8 @@ async function sendToDialogFlow(msg, session, params) {
       session
     );
 
+    // console.log('sessionPath :>> ', sessionPath);
+
     const request = {
       session: sessionPath,
       queryInput: {
@@ -38,7 +40,9 @@ async function sendToDialogFlow(msg, session, params) {
       },
     };
     const responses = await sessionClient.detectIntent(request);
+    // console.log('responses :>> ', responses);
     const result = responses[0].queryResult;
+    // console.log('RESULT responses[0].queryResult :>> ', result);
     console.log("INTENT EMPAREJADO: ", result.intent.displayName);
     let defaultResponses = [];
     if (result.action !== "input.unknown") {
@@ -57,6 +61,7 @@ async function sendToDialogFlow(msg, session, params) {
   } catch (e) {
     console.log("error");
     console.log(e);
+    return await sendToDialogFlow(msg, session, params)
   }
 }
 
