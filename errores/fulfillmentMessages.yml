@@ -1,0 +1,61 @@
+{
+  fulfillmentMessages: [
+    {
+      platform: 'PLATFORM_UNSPECIFIED',
+      text: {
+        text: [
+          "`Hola ${message.chat.contact.displayName}` + ' es un gusto que estés aquí 😊!  Bienvenido al WhatsApp de la mesa de ayuda de la Superintendencia de Servicios Públicos Domiciliarios. *#SUIBOT* 🤖🤙🏻'"
+        ]
+      },
+      message: 'text'
+    },
+    {
+      platform: 'PLATFORM_UNSPECIFIED',
+      text: {
+        text: [
+          "'Para continuar...por favor indícame el motivo de tu solicitud... \\n *1. Registrar un trámite*'"
+        ]
+      },
+      message: 'text'
+    }
+  ],
+  outputContexts: [
+    {
+      name: 'projects/suibot-umgo/agent/sessions/15c30420-c9d2-11ec-a34f-f71e55d5d1b1/contexts/contextosolicitud',
+      lifespanCount: 5,
+      parameters: null
+    }
+  ],
+  queryText: 'hola',
+  speechRecognitionConfidence: 0,
+  action: 'input.welcome',
+  parameters: { fields: {} },
+  allRequiredParamsPresent: true,
+  fulfillmentText: "`Hola ${message.chat.contact.displayName}` + ' es un gusto que estés aquí 😊!  Bienvenido al WhatsApp de la mesa de ayuda de la Superintendencia de Servicios Públicos Domiciliarios. *#SUIBOT* 🤖🤙🏻'",
+  webhookSource: '',
+  webhookPayload: null,
+  intent: {
+    inputContextNames: [],
+    events: [],
+    trainingPhrases: [],
+    outputContexts: [],
+    parameters: [],
+    messages: [],
+    defaultResponsePlatforms: [],
+    followupIntentInfo: [],
+    name: 'projects/suibot-umgo/agent/intents/aa8a823c-ffef-47fa-bb0c-bfe36f800b82',
+    displayName: 'Default Welcome Intent',
+    priority: 0,
+    isFallback: false,
+    webhookState: 'WEBHOOK_STATE_UNSPECIFIED',
+    action: '',
+    resetContexts: false,
+    rootFollowupIntentName: '',
+    parentFollowupIntentName: '',
+    mlDisabled: false
+  },
+  intentDetectionConfidence: 1,
+  diagnosticInfo: null,
+  languageCode: 'es',
+  sentimentAnalysisResult: null
+}

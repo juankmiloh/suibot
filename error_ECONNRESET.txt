@@ -1,0 +1,14 @@
+Error: 14 UNAVAILABLE: read ECONNRESET
+    at Object.callErrorFromStatus (D:\superservicios\proyectos\suibot\node_modules\@grpc\grpc-js\build\src\call.js:31:26)
+    at Object.onReceiveStatus (D:\superservicios\proyectos\suibot\node_modules\@grpc\grpc-js\build\src\client.js:179:52)
+    at Object.onReceiveStatus (D:\superservicios\proyectos\suibot\node_modules\@grpc\grpc-js\build\src\client-interceptors.js:336:141)
+    at Object.onReceiveStatus (D:\superservicios\proyectos\suibot\node_modules\@grpc\grpc-js\build\src\client-interceptors.js:299:181)
+    at D:\superservicios\proyectos\suibot\node_modules\@grpc\grpc-js\build\src\call-stream.js:145:78
+    at processTicksAndRejections (internal/process/task_queues.js:77:11) {
+  code: 14,
+  details: 'read ECONNRESET',
+  metadata: Metadata { internalRepr: Map(0) {}, options: {} }
+}
+(node:12520) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'fulfillmentMessages' of undefined
+    at D:\superservicios\proyectos\suibot\app.js:52:27
+(node:12520) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 3)

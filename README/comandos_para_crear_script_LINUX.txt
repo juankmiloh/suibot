@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------------
--- COMANDOS PARA CREAR UN SERVICIO EN LINUX - Levantar SUIBOT
+-- COMANDOS PARA CREAR UN SERVICIO EN LINUX - Levantar SUIBOT - 
 ---------------------------------------------------------------------------
 1. Entrar al directorio:
 	cd /lib/systemd/system/
@@ -7,7 +7,7 @@
 2. Crear el script del servicio
 	sudo nano suibot.service
 
-3. Escribir en el script lo siguiente:
+3. Escribir en el script lo siguiente: [------------------- AZURE --------------]
 	[Unit]
 	Description=Iniciar SUIBOT
 	After=network.target
@@ -19,6 +19,23 @@
 	Restart=always
 	RestartSec=1
 	User=azureuser
+	ExecStart=/bin/bash server.sh start
+
+	[Install]
+	WantedBy=multi-user.target
+
+3. Escribir en el script lo siguiente: [------------------- SERVIDOR GRUPO SUI SSPD --------------]
+	[Unit]
+	Description=Iniciar SUIBOT
+	After=network.target
+	StartLimitIntervalSec=0
+
+	[Service]
+	WorkingDirectory=/home/admincc/jherreraa/suibot
+	Type=simple
+	Restart=always
+	RestartSec=1
+	User=root
 	ExecStart=/bin/bash server.sh start
 
 	[Install]

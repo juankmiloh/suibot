@@ -1,0 +1,42 @@
+{
+  "id": "abe9fc88-f446-494a-8678-a004f10e03bc-7bfd09c2",
+  "fulfillmentText": "`Hola ${message.chat.contact.displayName}` + ' es un gusto que estés aquí 😊!  Bienvenido al WhatsApp de la mesa de ayuda de la Superintendencia de Servicios Públicos Domiciliarios. *#SUIBOT* 🤖🤙🏻'",
+  "language_code": "es",
+  "queryText": "hola",
+  "webhookPayload": {},
+  "intentDetectionConfidence": 1,
+  "action": "input.welcome",
+  "webhookSource": "",
+  "parameters": {},
+  "fulfillmentMessages": [
+    {
+      "text": {
+        "text": [
+          "`Hola ${message.chat.contact.displayName}` + ' es un gusto que estés aquí 😊!  Bienvenido al WhatsApp de la mesa de ayuda de la Superintendencia de Servicios Públicos Domiciliarios. *#SUIBOT* 🤖🤙🏻'"
+        ]
+      }
+    },
+    {
+      "text": {
+        "text": [
+          "'Para continuar...por favor indícame el motivo de tu solicitud... \\n *1. Registrar un trámite*'"
+        ]
+      }
+    }
+  ],
+  "webhookStatus": {
+    "webhookUsed": false
+  },
+  "outputContexts": [
+    {
+      "lifespanCount": 5,
+      "name": "contextosolicitud",
+      "parameters": {}
+    }
+  ],
+  "intent": {
+    "isFallback": false,
+    "displayName": "Default Welcome Intent",
+    "id": "aa8a823c-ffef-47fa-bb0c-bfe36f800b82"
+  }
+}
